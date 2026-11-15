@@ -20,8 +20,9 @@ export async function StatsSection() {
   ];
 
   return (
-    <section className="bg-card py-10 border-y border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-[#0E0E0E] py-14 border-y border-white/10 overflow-hidden">
+      <div className="absolute inset-0 grid-overlay opacity-20 pointer-events-none" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <StatsClient stats={stats} />
       </div>
     </section>

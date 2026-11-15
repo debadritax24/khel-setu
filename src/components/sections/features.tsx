@@ -3,139 +3,159 @@
 import { motion } from "framer-motion";
 import {
   Trophy, Users, BarChart3, Award, MessageSquare, Shield,
-  MapPin, Calendar, TrendingUp
+  MapPin, Calendar, TrendingUp, ArrowUpRight
 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
     icon: Trophy,
     title: "Tournament Management",
     description: "Discover, register, and participate in tournaments across India with real-time updates and live scoring.",
-    size: "lg" as const,
+    code: "01",
+    span: "lg:col-span-2",
+    tag: "LIVE SCORING & BRACKETS",
   },
   {
     icon: Users,
     title: "Connect & Network",
     description: "Build your sports network with athletes, coaches, schools, and sponsors.",
-    size: "md" as const,
+    code: "02",
+    span: "lg:col-span-1",
+    tag: "ATHLETE DIRECTORY",
   },
   {
     icon: BarChart3,
     title: "Performance Analytics",
     description: "Track progress with detailed analytics and performance metrics.",
-    size: "md" as const,
+    code: "03",
+    span: "lg:col-span-1",
+    tag: "METRICS ENGINE",
   },
   {
     icon: Award,
     title: "Digital Certificates",
     description: "Earn verified digital certificates for your achievements.",
-    size: "sm" as const,
+    code: "04",
+    span: "lg:col-span-1",
+    tag: "SECURE QR VERIFICATION",
   },
   {
     icon: MessageSquare,
     title: "Messaging",
     description: "Direct communication with coaches, sponsors, and fellow athletes.",
-    size: "sm" as const,
+    code: "05",
+    span: "lg:col-span-1",
+    tag: "ENCRYPTED CHAT",
   },
   {
     icon: Shield,
     title: "Verified Profiles",
     description: "Trusted and verified profiles for athletes, schools, and coaches across the platform.",
-    size: "lg" as const,
+    code: "06",
+    span: "lg:col-span-2",
+    tag: "MULTI-ROLE VERIFICATION",
   },
   {
     icon: MapPin,
     title: "Location Discovery",
     description: "Find nearby tournaments, schools, and athletes.",
-    size: "sm" as const,
+    code: "07",
+    span: "lg:col-span-1",
+    tag: "GEOLOCATION MAPPING",
   },
   {
     icon: Calendar,
     title: "Event Calendar",
     description: "Never miss an event with our comprehensive sports calendar.",
-    size: "wide" as const,
+    code: "08",
+    span: "lg:col-span-2",
+    tag: "SYNCHRONIZED SCHEDULES",
   },
   {
     icon: TrendingUp,
     title: "Career Guidance",
     description: "AI-powered guidance to help you reach your full potential.",
-    size: "sm" as const,
+    code: "09",
+    span: "lg:col-span-1",
+    tag: "DEVELOPMENT PATHWAY",
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="bg-background py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <h2 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-            Built for the game
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+    <section id="features" className="relative bg-[#0A0A0A] py-24 sm:py-32 border-b border-white/10 overflow-hidden">
+      <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-16 border-b border-white/10">
+          <div>
+            <div className="inline-flex items-center gap-2 font-mono-tag text-xs font-semibold uppercase tracking-widest text-[#FF4D12]">
+              <span>[ 02 // PLATFORM CAPABILITIES ]</span>
+            </div>
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
+              Built for the game
+            </h2>
+          </div>
+          <p className="max-w-md text-base sm:text-lg text-neutral-400 font-normal leading-relaxed">
             Everything athletes, coaches, schools, and sponsors need — in one platform.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Bento grid — explicit placement on lg for precise layout */}
-        <div
-          className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className={`
-                group rounded-[16px] border p-6 transition-all hover:shadow-sm hover:border-primary/50
-                bg-card border-border
-                ${feature.size === "lg" ? "lg:p-8" : ""}
-              `}
-              style={{
-                gridColumn: undefined,
-                gridRow: undefined,
-              }}
-            >
-              <div
-                className={`
-                  flex items-center justify-center rounded-[12px] transition-colors bg-secondary/50 group-hover:bg-primary/10
-                  ${feature.size === "lg" ? "h-14 w-14" : "h-10 w-10"}
-                `}
+        {/* Bento Grid */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className={cn(
+                  "group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-[#121212]/80 p-7 backdrop-blur-sm transition-all duration-300",
+                  "hover:border-[#FF4D12]/40 hover:bg-[#161616] hover:shadow-[0_10px_30px_-10px_rgba(255,77,18,0.15)]",
+                  feature.span
+                )}
               >
-                <feature.icon
-                  className={`
-                    transition-colors text-muted-foreground group-hover:text-primary
-                    ${feature.size === "lg" ? "h-7 w-7" : "h-5 w-5"}
-                  `}
-                />
-              </div>
+                {/* Top card header: Code and Tag */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono-tag text-xs font-bold text-[#FF4D12]">
+                      //{feature.code}
+                    </span>
+                    <span className="font-mono-tag text-[10px] tracking-wider text-neutral-400 uppercase">
+                      {feature.tag}
+                    </span>
+                  </div>
+                  <ArrowUpRight className="h-4 w-4 text-white/30 transition-all duration-300 group-hover:text-[#FF4D12] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
 
-              <h3
-                className={`
-                  font-semibold tracking-tight text-card-foreground
-                  ${feature.size === "lg" ? "mt-6 text-xl" : "mt-3 text-base"}
-                `}
-              >
-                {feature.title}
-              </h3>
+                {/* Card Icon & Content */}
+                <div className="mt-8">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#FF4D12] transition-all duration-300 group-hover:bg-[#FF4D12]/15 group-hover:border-[#FF4D12]/30 group-hover:scale-110">
+                    <Icon className="h-6 w-6" />
+                  </div>
 
-              <p
-                className={`
-                  text-muted-foreground
-                  ${feature.size === "lg" ? "mt-3 text-sm leading-relaxed" : "mt-1.5 text-sm"}
-                `}
-              >
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+                  <h3 className="mt-6 font-display text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-white">
+                    {feature.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                    {feature.description}
+                  </p>
+                </div>
+
+                {/* Bottom line accent */}
+                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                  <span className="font-mono-tag text-[10px] text-neutral-400 uppercase">STATUS: ACTIVE</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-white/20 group-hover:bg-[#FF4D12] transition-colors" />
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

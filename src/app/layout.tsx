@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Inter, Space_Grotesk, Roboto_Mono } from "next/font/google";
 import { Providers } from "@/providers";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk", display: "swap" });
+const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Khel Setu - The Sports Ecosystem of India",
@@ -27,8 +28,8 @@ export default function RootLayout({
         },
       }}
     >
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`}>
+      <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+        <body className={`${inter.variable} ${spaceGrotesk.variable} ${robotoMono.variable} font-sans antialiased bg-[#0A0A0A] text-[#EDEDED] selection:bg-[#FF4D12]/30 selection:text-white min-h-screen`}>
           <Providers>{children}</Providers>
         </body>
       </html>

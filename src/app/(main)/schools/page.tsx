@@ -1,4 +1,5 @@
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { PageHeader } from "@/components/layout/page-header";
 import { Pagination } from "@/components/shared/pagination";
@@ -108,11 +109,12 @@ export default async function SchoolsPage({
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0A0A0A] flex flex-col justify-between">
       <Header />
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 flex-1 w-full">
         {content}
       </main>
+      <Footer />
     </div>
   );
 }

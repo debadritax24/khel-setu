@@ -70,20 +70,24 @@ export function OnboardingForm() {
             <Card
               key={role.id}
               className={cn(
-                "cursor-pointer transition-all hover:border-primary/50",
-                isSelected ? "border-primary bg-primary/5 ring-1 ring-primary" : "border-border bg-card hover:bg-card/80"
+                "group cursor-pointer rounded-2xl border p-2 transition-all duration-300",
+                isSelected
+                  ? "border-[#FF4D12] bg-[#FF4D12]/10 shadow-[0_0_30px_-5px_rgba(255,77,18,0.3)] ring-1 ring-[#FF4D12]"
+                  : "border-white/10 bg-[#141414]/90 hover:border-white/30 hover:bg-[#1A1A1A]"
               )}
               onClick={() => setSelectedRole(role.id)}
             >
               <CardContent className="flex flex-col items-center justify-center p-6 text-center">
                 <div className={cn(
-                  "mb-4 rounded-full p-4 transition-colors",
-                  isSelected ? "bg-primary text-primary-foreground" : "bg-neutral-800 text-neutral-400"
+                  "mb-4 flex h-16 w-16 items-center justify-center rounded-2xl border transition-all duration-300",
+                  isSelected
+                    ? "border-[#FF4D12] bg-[#FF4D12] text-white shadow-[0_0_20px_-3px_rgba(255,77,18,0.6)]"
+                    : "border-white/10 bg-white/5 text-neutral-400 group-hover:text-white group-hover:border-white/20"
                 )}>
-                  <Icon className="h-8 w-8" />
+                  <Icon className="h-7 w-7" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-white">{role.title}</h3>
-                <p className="text-sm text-neutral-400">{role.description}</p>
+                <h3 className="mb-2 font-display text-xl font-bold text-white">{role.title}</h3>
+                <p className="text-sm text-neutral-400 leading-relaxed">{role.description}</p>
               </CardContent>
             </Card>
           );

@@ -1,6 +1,7 @@
 import { getAllTournaments } from "@/actions/tournament.actions";
 import { EventsClient } from "./events-client";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Trophy } from "lucide-react";
 import Link from "next/link";
 
 export async function EventsSection() {
@@ -8,27 +9,42 @@ export async function EventsSection() {
   const events = result?.data ?? [];
 
   return (
-    <section className="bg-background py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <section className="relative bg-[#0A0A0A] py-24 sm:py-32 border-b border-white/10 overflow-hidden">
+      <div className="absolute inset-0 grid-overlay opacity-25 pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between pb-12 border-b border-white/10">
           <div>
-            <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <div className="inline-flex items-center gap-2 font-mono-tag text-xs font-semibold uppercase tracking-widest text-[#FF4D12]">
+              <span>[ 04 // COMPETITION ARENA ]</span>
+            </div>
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
               Upcoming Events
             </h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Don&apos;t miss out on exciting tournaments.
+            <p className="mt-3 text-base sm:text-lg text-neutral-400">
+              Don&apos;t miss out on exciting tournaments across India.
             </p>
           </div>
-          <Button variant="outline" className="sm:flex text-primary border-primary hover:bg-primary/5" asChild>
-            <Link href="/tournaments">
-              View All Events
+
+          <Button
+            variant="outline"
+            className="group rounded-full border border-white/20 bg-white/5 text-white hover:bg-[#FF4D12]/10 hover:border-[#FF4D12]/50 hover:text-white transition-all px-6 py-5 text-sm font-semibold"
+            asChild
+          >
+            <Link href="/tournaments" className="flex items-center gap-2">
+              <span>View All Events</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
 
-        {events.length > 0 ? <EventsClient events={events} /> : (
-          <div className="mt-12 rounded-xl border border-dashed border-border bg-card p-8 text-center text-sm text-muted-foreground">
-            No upcoming tournaments are available yet.
+        {events.length > 0 ? (
+          <EventsClient events={events} />
+        ) : (
+          <div className="mt-12 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-12 text-center backdrop-blur-sm">
+            <Trophy className="mx-auto h-12 w-12 text-white/20 mb-4" />
+            <p className="font-display text-lg font-bold text-white">No upcoming tournaments available yet</p>
+            <p className="mt-2 text-sm text-neutral-400">Check back soon or explore previous tournament archives.</p>
           </div>
         )}
       </div>

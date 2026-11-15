@@ -2,7 +2,33 @@
 
 **One Platform. Every Athlete. Every Opportunity.**
 
-India's comprehensive Sports Ecosystem Platform built to bridge the gap between athletes, schools, coaches, sponsors, and tournament organizers. Designed with modern architecture to deliver a seamless, scalable, and secure experience for the sporting community.
+India's comprehensive Sports Ecosystem Platform built to bridge the gap between athletes, schools, coaches, sponsors, and tournament organizers. Designed with modern architecture and a high-performance visual design system to deliver a seamless, cinematic, scalable, and secure experience for the sporting community.
+
+---
+
+## 🎨 Visual Identity & Design System
+
+Khel Setu features an international-standard sports-tech design system inspired by **The Performance Lab**, combining high-octane athletic performance aesthetics with India's vibrant sporting spirit:
+
+### Color Palette
+- **Obsidian Foundation:** Deep charcoal and obsidian (`#0A0A0A`, `#121212`) for an immersive, cinematic backdrop.
+- **Electric Flame & Saffron:** High-energy accents (`#FF4D12`, `#F28C28`) providing focal urgency, action states, and Indian athletic identity.
+- **Pure White & Neutral Depths:** Crisp display text (`#FFFFFF`) contrasted with balanced neutral tones (`#EDEDED`, `#8E8E8E`).
+- **Architectural Borders:** Subtle hairline grid overlays (`rgba(255, 255, 255, 0.1)`) and precision crosshairs.
+
+### Typography Hierarchy
+- **Display Headings:** **Space Grotesk** — bold, dominant, tightly-tracked display typography for oversized headlines and editorial statements.
+- **Body & Interface:** **Inter** — clean, highly-legible sans-serif typography engineered for readability across all device densities.
+- **Technical Badges:** **Roboto Mono** — monospaced counters, status tags, and protocol labels (`[ 01 // OVERVIEW ]`, `STATUS: VERIFIED`).
+
+### Layout & Component Architecture
+- **Dynamic Glass Header:** Seamless transparent-to-solid frosted glass transition with scroll detection, animated active pill indicator, and responsive mobile drawer.
+- **Cinematic Hero:** Oversized display typography with ambient radial lighting, precision technical coordinates, and dual action CTAs.
+- **Asymmetric Bento Grid:** Modular 4-column capability grid featuring dynamic spans, status pills, and interactive hover glow.
+- **Architectural Workflow:** 4-phase horizontal progress track (`01` Onboarding → `02` Scouting → `03` Performance → `04` Recognition).
+- **Verified Competition Cards:** Tournament and event cards with real-time status indicators, sport category tags, and calendar telemetry.
+- **Luxury Brand Footer:** Architectural column hierarchy with faint watermark branding (`KHEL SETU`) and live system status telemetry.
+- **Motion & Accessibility:** Smooth Framer Motion staggered reveals and micro-interactions with full support for `prefers-reduced-motion`.
 
 ---
 
@@ -29,6 +55,7 @@ Khel Setu is built with a state-of-the-art **Next.js 15 App Router** architectur
 - **Framework:** Next.js 15 (React 19)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS v4
+- **Typography:** Space Grotesk, Inter, Roboto Mono (Next.js Google Fonts)
 - **UI Components:** shadcn/ui + Radix UI Primitives
 - **State Management:** Zustand
 - **Forms & Validation:** React Hook Form + Zod
@@ -54,13 +81,16 @@ The codebase is strictly organized using a multi-layer architecture to separate 
 src/
 ├── actions/          # Next.js Server Actions (Frontend API boundary)
 ├── app/              # Next.js App Router (Pages & Layouts)
-│   ├── (auth)/       # Public authentication routes
+│   ├── (auth)/       # Public authentication routes (login, sign-up, onboarding)
 │   └── (main)/       # Protected application routes (Dashboards, Entities)
 ├── components/       # Reusable UI elements
-│   ├── layout/       # Sidebar, Header, Navigation
-│   ├── sections/     # Page-level sections
-│   └── ui/           # shadcn/ui base components
-├── config/           # Configuration files
+│   ├── layout/       # Sidebar, Header, Footer, PageHeader
+│   ├── sections/     # Page-level sections (Hero, Stats, Features, How-it-works, Events, Sponsors, FAQ, CTA)
+│   ├── shared/       # Shared business components (Pagination, Search, etc.)
+│   └── ui/           # shadcn/ui base primitives (Button, Card, Badge, Input, etc.)
+├── config/           # Configuration files & platform constants
+├── constants/        # Navigation routes, sport categories, system roles
+├── emails/           # Transactional HTML email templates
 ├── lib/              # Utility functions, helpers, and Prisma client instantiation
 ├── repositories/     # Data Access Layer (Prisma Queries)
 ├── services/         # Business Logic Layer
@@ -123,6 +153,13 @@ The relational database is powered by PostgreSQL and managed via Prisma. Core en
    CLOUDINARY_CLOUD_NAME="..."
    CLOUDINARY_API_KEY="..."
    CLOUDINARY_API_SECRET="..."
+
+   # Email Service (SMTP)
+   EMAIL_HOST="smtp.gmail.com"
+   EMAIL_PORT="587"
+   EMAIL_USER="..."
+   EMAIL_PASS="..."
+   EMAIL_FROM="noreply@khelsetu.com"
    ```
 
 4. **Initialize the Database:**

@@ -98,30 +98,32 @@ export function Sidebar({ role }: SidebarProps) {
   const sidebarContent = (
     <aside
       className={cn(
-        "flex h-full flex-col border-r border-border bg-background transition-all duration-300",
-        collapsed ? "w-16" : "w-64"
+        "flex h-full flex-col border-r border-white/10 bg-[#0A0A0A] text-white transition-all duration-300",
+        collapsed ? "w-18" : "w-64"
       )}
     >
-      <div className="flex items-center justify-between p-4 h-16">
+      <div className="flex items-center justify-between p-4 h-16 border-b border-white/10">
         {!collapsed && (
-          <Link href="/" className="flex items-center gap-2">
-            <Trophy className="h-6 w-6 text-primary" />
-            <span className="font-sans text-xl font-bold tracking-tight text-primary">KHEL सेतु</span>
+          <Link href="/" className="group flex items-center gap-2.5">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/5 transition-all group-hover:border-[#FF4D12]/60 group-hover:bg-[#FF4D12]/15">
+              <Trophy className="h-4 w-4 text-[#FF4D12]" />
+            </div>
+            <span className="font-display text-lg font-bold tracking-tight text-white">
+              KHEL <span className="text-[#FF4D12]">सेतु</span>
+            </span>
           </Link>
         )}
         <Button
           variant="ghost"
           size="icon"
           onClick={() => setCollapsed(!collapsed)}
-          className="h-8 w-8 hidden md:flex text-muted-foreground hover:text-primary"
+          className="h-8 w-8 hidden md:flex text-neutral-400 hover:text-white hover:bg-white/5"
         >
           {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
         </Button>
       </div>
 
-      <Separator />
-
-      <nav className="flex-1 space-y-1 p-2">
+      <nav className="flex-1 space-y-1.5 p-3 overflow-y-auto">
         {menuItems.map((item) => {
           const Icon = iconMap[item.icon] || LayoutDashboard;
           const isActive = pathname === item.href;
@@ -130,23 +132,24 @@ export function Sidebar({ role }: SidebarProps) {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-[12px] px-3 py-2 text-sm font-medium transition-colors border",
+                "group flex items-center gap-3 rounded-xl px-3 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 border",
                 isActive
-                  ? "bg-card border-border text-primary shadow-sm"
-                  : "border-transparent text-muted-foreground hover:text-foreground hover:bg-card/50"
+                  ? "bg-[#FF4D12]/15 border-[#FF4D12]/30 text-white shadow-[0_0_20px_-5px_rgba(255,77,18,0.3)]"
+                  : "border-transparent text-neutral-400 hover:text-white hover:bg-white/5 hover:border-white/10"
               )}
               title={collapsed ? item.label : undefined}
             >
-              <Icon className="h-5 w-5 shrink-0" />
+              <Icon className={cn("h-4 w-4 shrink-0 transition-colors", isActive ? "text-[#FF4D12]" : "text-neutral-400 group-hover:text-white")} />
               {!collapsed && <span>{item.label}</span>}
+              {!collapsed && isActive && (
+                <span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#FF4D12]" />
+              )}
             </Link>
           );
         })}
       </nav>
 
-      <Separator />
-
-      <div className="p-4">
+      <div className="p-4 border-t border-white/10">
         <UserButton afterSignOutUrl="/" />
       </div>
     </aside>

@@ -2,10 +2,6 @@ import { getVerifiedSponsors } from "@/actions/sponsor.actions";
 import { SponsorsClient } from "./sponsors-client";
 import { Sponsor } from "@prisma/client";
 
-// Server components can't use framer-motion directly on themselves, but we can pass standard HTML classes or use a client wrapper for the title if needed.
-// However, since we want to keep the title animated, we'll just extract the title to a client component or let it be static on the server.
-// Let's create a small client wrapper for the title, or we can just render it statically since it's above the fold mostly.
-
 export async function SponsorsSection() {
   let sponsors: Sponsor[] = [];
   try {
@@ -19,13 +15,18 @@ export async function SponsorsSection() {
   }
 
   return (
-    <section className="bg-background py-24 border-t border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-sans text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+    <section className="relative bg-[#0E0E0E] py-24 sm:py-32 border-b border-white/10 overflow-hidden">
+      <div className="absolute inset-0 grid-overlay opacity-20 pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 font-mono-tag text-xs font-semibold uppercase tracking-widest text-[#FF4D12] mb-3">
+            <span>[ 05 // STRATEGIC ALLIANCES ]</span>
+          </div>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
             Trusted by Leading Brands
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base sm:text-lg text-neutral-400">
             Partnering with top organizations to support India&apos;s athletes.
           </p>
         </div>

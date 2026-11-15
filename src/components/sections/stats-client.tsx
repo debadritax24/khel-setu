@@ -11,7 +11,7 @@ interface StatsClientProps {
 
 export function StatsClient({ stats }: StatsClientProps) {
   return (
-    <div className="flex flex-wrap divide-y md:divide-y-0 md:divide-x divide-border">
+    <div className="grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10 gap-y-8 sm:gap-y-0">
       {stats.map((stat, index) => (
         <motion.div
           key={stat.label}
@@ -19,10 +19,20 @@ export function StatsClient({ stats }: StatsClientProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="flex-1 text-center py-6 md:py-0"
+          className="group flex flex-col justify-between px-4 sm:px-8 py-2 text-left"
         >
-          <p className="font-heading text-4xl font-bold text-accent">{stat.value}</p>
-          <p className="mt-2 text-sm font-medium tracking-wide text-muted-foreground uppercase">
+          <div className="flex items-center justify-between mb-4">
+            <span className="font-mono-tag text-[11px] tracking-widest text-[#FF4D12] uppercase">
+              // 0{index + 1}
+            </span>
+            <span className="h-1.5 w-1.5 rounded-full bg-white/20 group-hover:bg-[#FF4D12] transition-colors" />
+          </div>
+
+          <p className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-[#FF4D12]">
+            {stat.value}
+          </p>
+
+          <p className="mt-3 font-mono-tag text-xs font-semibold tracking-wider text-neutral-400 uppercase group-hover:text-neutral-200 transition-colors">
             {stat.label}
           </p>
         </motion.div>

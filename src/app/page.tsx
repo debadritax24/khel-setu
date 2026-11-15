@@ -11,7 +11,7 @@ import { CTASection } from "@/components/sections/cta";
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-[#0A0A0A] text-[#EDEDED]">
       <Header />
       <main className="flex-1">
         <HeroSection />
