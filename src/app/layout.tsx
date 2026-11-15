@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
 
 export const metadata: Metadata = {
-  title: "Khelo Bharat - The Sports Ecosystem of India",
+  title: "Khel Setu - The Sports Ecosystem of India",
   description: "One platform connecting athletes, academies & sponsors across India.",
 };
 

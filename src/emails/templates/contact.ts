@@ -39,7 +39,7 @@ export function getContactEmail(
           </div>
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>

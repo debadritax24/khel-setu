@@ -26,7 +26,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-6 font-sans text-5xl font-bold uppercase tracking-tight text-primary sm:text-7xl lg:text-9xl"
           >
-            KHELO भारत
+            KHEL सेतु
           </motion.h1>
 
           <motion.h2

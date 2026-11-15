@@ -3,7 +3,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { uploadImage, deleteImage } from "@/lib/cloudinary";
 
-export async function uploadFile(file: File, folder: string = "khelo-bharat") {
+export async function uploadFile(file: File, folder: string = "khel-setu") {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 

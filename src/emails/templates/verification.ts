@@ -21,7 +21,7 @@ export function getVerificationEmail(name: string, code: string): string {
     <body>
       <div class="container">
         <div class="header">
-          <h1>Khelo Bharat</h1>
+          <h1>Khel Setu</h1>
         </div>
         <div class="content">
           <h2>Verify Your Email</h2>
@@ -32,7 +32,7 @@ export function getVerificationEmail(name: string, code: string): string {
           <p>If you didn't request this, please ignore this email.</p>
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>

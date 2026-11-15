@@ -1,4 +1,4 @@
--- This migration is additive to the original Khelo Bharat schema.
+-- This migration is additive to the original Khel Setu schema.
 -- It intentionally inserts no business records or reference data.
 
 ALTER TABLE "Tournament" ADD COLUMN IF NOT EXISTS "results" TEXT;

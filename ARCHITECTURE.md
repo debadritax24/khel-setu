@@ -2,7 +2,7 @@
 
 ## Overview
 
-Khelo Bharat follows a clean architecture approach with Feature-Driven Development (FDD).
+Khel Setu follows a clean architecture approach with Feature-Driven Development (FDD).
 
 ## Principles
 

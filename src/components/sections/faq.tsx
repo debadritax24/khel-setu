@@ -6,16 +6,16 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is Khelo Bharat?",
-    answer: "Khelo Bharat is India's complete Sports Ecosystem Platform that connects athletes, schools, coaches, sponsors, and tournament organizers. It provides tools for tournament management, performance tracking, digital certificates, and networking.",
+    question: "What is Khel Setu?",
+    answer: "Khel Setu is India's complete Sports Ecosystem Platform that connects athletes, schools, coaches, sponsors, and tournament organizers. It provides tools for tournament management, performance tracking, digital certificates, and networking.",
   },
   {
-    question: "Who can join Khelo Bharat?",
+    question: "Who can join Khel Setu?",
     answer: "Any athlete, coach, school administrator, or sports sponsor can join. We welcome participants from all sports and skill levels across India.",
   },
   {
-    question: "Is Khelo Bharat free to use?",
-    answer: "Yes, Khelo Bharat is free for athletes and coaches. Schools and sponsors may have premium features available through subscription plans.",
+    question: "Is Khel Setu free to use?",
+    answer: "Yes, Khel Setu is free for athletes and coaches. Schools and sponsors may have premium features available through subscription plans.",
   },
   {
     question: "How do tournaments work?",
@@ -42,7 +42,7 @@ export function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Everything you need to know about Khelo Bharat.
+            Everything you need to know about Khel Setu.
           </p>
         </motion.div>
 

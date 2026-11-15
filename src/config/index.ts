@@ -1,8 +1,8 @@
 export const config = {
   app: {
-    name: "Khelo Bharat",
+    name: "Khel Setu",
     tagline: "One Platform. Every Athlete. Every Opportunity.",
-    url: process.env.NEXT_PUBLIC_APP_URL || "https://khelobharat.com",
+    url: process.env.NEXT_PUBLIC_APP_URL || "https://khelsetu.com",
     description: "India's complete Sports Ecosystem Platform connecting athletes, schools, coaches, sponsors, and tournament organizers.",
   },
   clerk: {
@@ -14,7 +14,7 @@ export const config = {
   },
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME!,
-    uploadFolder: "khelo-bharat",
+    uploadFolder: "khel-setu",
   },
   email: {
     host: process.env.EMAIL_HOST!,

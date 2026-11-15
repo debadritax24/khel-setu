@@ -22,7 +22,7 @@ export default async function ProfilePage() {
   return (
     <DashboardLayout>
       <div className="space-y-8">
-        <PageHeader title="Profile" description="Complete the information needed to participate in Khelo Bharat." />
+        <PageHeader title="Profile" description="Complete the information needed to participate in Khel Setu." />
         <ProfileSetup role={user.role} profileExists={profileExists} />
       </div>
     </DashboardLayout>

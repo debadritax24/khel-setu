@@ -37,10 +37,10 @@ export function getCertificateEmail(
 
           <p>Use this code to verify the authenticity of your certificate.</p>
 
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/certificates" class="btn">Download Certificate</a>
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/certificates" class="btn">Download Certificate</a>
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>

@@ -1,6 +1,6 @@
-export const APP_NAME = "Khelo Bharat";
+export const APP_NAME = "Khel Setu";
 export const APP_TAGLINE = "One Platform. Every Athlete. Every Opportunity.";
-export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://khelobharat.com";
+export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://khelsetu.com";
 
 export const ROLES = {
   SUPER_ADMIN: "SUPER_ADMIN",

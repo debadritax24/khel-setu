@@ -18,7 +18,7 @@ export interface UploadResult {
 
 export async function uploadImage(
   file: File,
-  folder: string = "khelo-bharat"
+  folder: string = "khel-setu"
 ): Promise<UploadResult> {
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
@@ -44,7 +44,7 @@ export async function uploadImage(
 
 export async function uploadMultipleImages(
   files: File[],
-  folder: string = "khelo-bharat"
+  folder: string = "khel-setu"
 ): Promise<UploadResult[]> {
   return Promise.all(files.map((file) => uploadImage(file, folder)));
 }

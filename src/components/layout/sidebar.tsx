@@ -106,7 +106,7 @@ export function Sidebar({ role }: SidebarProps) {
         {!collapsed && (
           <Link href="/" className="flex items-center gap-2">
             <Trophy className="h-6 w-6 text-primary" />
-            <span className="font-sans text-xl font-bold tracking-tight text-primary">KHELO भारत</span>
+            <span className="font-sans text-xl font-bold tracking-tight text-primary">KHEL सेतु</span>
           </Link>
         )}
         <Button

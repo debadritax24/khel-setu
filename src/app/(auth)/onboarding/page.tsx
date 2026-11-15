@@ -11,7 +11,7 @@ export default async function OnboardingPage() {
       <div className="w-full max-w-4xl space-y-8">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Welcome to Khelo Bharat
+            Welcome to Khel Setu
           </h1>
           <p className="mt-4 text-lg text-neutral-400">
             How are you planning to use the platform? Select your primary role below.

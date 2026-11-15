@@ -27,7 +27,7 @@ export function getSponsorInvitationEmail(
     <body>
       <div class="container">
         <div class="header">
-          <h1>Partner With Khelo Bharat</h1>
+          <h1>Partner With Khel Setu</h1>
         </div>
         <div class="content">
           <h2>Dear ${sponsorName},</h2>
@@ -44,13 +44,13 @@ export function getSponsorInvitationEmail(
             </ul>
           </div>
 
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/sponsors" class="btn">Learn More</a>
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/sponsors" class="btn">Learn More</a>
 
           <p>We look forward to hearing from you.</p>
-          <p>Best regards,<br>The Khelo Bharat Team</p>
+          <p>Best regards,<br>The Khel Setu Team</p>
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>

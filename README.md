@@ -1,4 +1,4 @@
-# Khelo Bharat (खेला भारत)
+# Khel Setu (खेल सेतु)
 
 **One Platform. Every Athlete. Every Opportunity.**
 
@@ -23,7 +23,7 @@ India's comprehensive Sports Ecosystem Platform built to bridge the gap between 
 
 ## 🛠️ Tech Stack & Architecture
 
-Khelo Bharat is built with a state-of-the-art **Next.js 15 App Router** architecture, heavily leveraging React Server Components (RSC) and Next.js Server Actions.
+Khel Setu is built with a state-of-the-art **Next.js 15 App Router** architecture, heavily leveraging React Server Components (RSC) and Next.js Server Actions.
 
 ### Frontend
 - **Framework:** Next.js 15 (React 19)
@@ -96,8 +96,8 @@ The relational database is powered by PostgreSQL and managed via Prisma. Core en
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-org/khelo-bharat.git
-   cd khelo-bharat
+   git clone https://github.com/your-org/khel-setu.git
+   cd khel-setu
    ```
 
 2. **Install dependencies:**
@@ -155,4 +155,4 @@ We welcome contributions! To contribute:
 
 ## 📄 License
 
-This project is licensed under the MIT License - © 2026 Khelo Bharat.
+This project is licensed under the MIT License - © 2026 Khel Setu.

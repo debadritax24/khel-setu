@@ -43,10 +43,10 @@ export function getTournamentRegistrationEmail(
 
           <p>Make sure to arrive 30 minutes before the scheduled time. Good luck!</p>
 
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/tournaments" class="btn">View Tournament</a>
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/tournaments" class="btn">View Tournament</a>
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>

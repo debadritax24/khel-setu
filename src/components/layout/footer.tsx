@@ -30,7 +30,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <Trophy className="h-6 w-6 text-primary" />
-              <span className="font-sans text-xl font-bold tracking-tight text-primary">KHELO भारत</span>
+              <span className="font-sans text-xl font-bold tracking-tight text-primary">KHEL सेतु</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
               One Platform. Every Athlete. Every Opportunity.
@@ -88,7 +88,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-border pt-8">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} KHELO भारत. All rights reserved.
+            © {new Date().getFullYear()} KHEL सेतु. All rights reserved.
           </p>
         </div>
       </div>

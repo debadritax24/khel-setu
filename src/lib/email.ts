@@ -59,14 +59,14 @@ export function emailWrapper(content: string): string {
     <body>
       <div class="container">
         <div class="header">
-          <h1>Khelo Bharat</h1>
+          <h1>Khel Setu</h1>
           <p>One Platform. Every Athlete. Every Opportunity.</p>
         </div>
         <div class="content">
           ${content}
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>
@@ -76,7 +76,7 @@ export function emailWrapper(content: string): string {
 
 export function welcomeEmail(name: string): string {
   return emailWrapper(`
-    <h2>Welcome to Khelo Bharat! 🏆</h2>
+    <h2>Welcome to Khel Setu! 🏆</h2>
     <p>Hi ${name},</p>
     <p>We're thrilled to have you join India's premier sports ecosystem platform. You're now part of a community that connects athletes, coaches, schools, and sponsors across the nation.</p>
     <p>Here's what you can do:</p>
@@ -86,7 +86,7 @@ export function welcomeEmail(name: string): string {
       <li>Connect with coaches and sponsors</li>
       <li>Track your performance and achievements</li>
     </ul>
-    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/dashboard" class="btn">Go to Dashboard</a>
+    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/dashboard" class="btn">Go to Dashboard</a>
     <p>Need help? Reply to this email and we'll get back to you.</p>
   `);
 }
@@ -124,7 +124,7 @@ export function tournamentRegistrationEmail(
     <p>You have successfully registered for <strong>${tournamentName}</strong>.</p>
     <p><strong>Date:</strong> ${date}</p>
     <p>Make sure to arrive 30 minutes before the scheduled time. Good luck!</p>
-    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/tournaments" class="btn">View Tournament</a>
+    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/tournaments" class="btn">View Tournament</a>
   `);
 }
 
@@ -136,7 +136,7 @@ export function certificateGeneratedEmail(
     <h2>Your Certificate is Ready!</h2>
     <p>Hi ${userName},</p>
     <p>Your certificate <strong>${certificateTitle}</strong> has been generated and is ready for download.</p>
-    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/certificates" class="btn">Download Certificate</a>
+    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/certificates" class="btn">Download Certificate</a>
   `);
 }
 
@@ -145,11 +145,11 @@ export function sponsorInvitationEmail(
   platformName: string
 ): string {
   return emailWrapper(`
-    <h2>Partner With Khelo Bharat</h2>
+    <h2>Partner With Khel Setu</h2>
     <p>Dear ${sponsorName},</p>
     <p>We invite you to partner with ${platformName} on India's fastest-growing sports ecosystem platform.</p>
     <p>Connect with talented athletes, schools, and coaches across India.</p>
-    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/sponsors" class="btn">Learn More</a>
+    <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/sponsors" class="btn">Learn More</a>
   `);
 }
 

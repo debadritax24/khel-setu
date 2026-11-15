@@ -26,7 +26,7 @@ export function getWelcomeEmail(name: string): string {
     <body>
       <div class="container">
         <div class="header">
-          <h1>Welcome to Khelo Bharat</h1>
+          <h1>Welcome to Khel Setu</h1>
           <p>One Platform. Every Athlete. Every Opportunity.</p>
         </div>
         <div class="content">
@@ -44,13 +44,13 @@ export function getWelcomeEmail(name: string): string {
             </ul>
           </div>
 
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelobharat.com'}/dashboard" class="btn">Go to Dashboard</a>
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://khelsetu.com'}/dashboard" class="btn">Go to Dashboard</a>
 
           <p>Need help? Reply to this email and we'll get back to you.</p>
-          <p>Cheers,<br>The Khelo Bharat Team</p>
+          <p>Cheers,<br>The Khel Setu Team</p>
         </div>
         <div class="footer">
-          <p>&copy; ${new Date().getFullYear()} Khelo Bharat. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} Khel Setu. All rights reserved.</p>
         </div>
       </div>
     </body>

@@ -13,7 +13,7 @@ export default function SportsPage() {
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <PageHeader
           title="Sports"
-          description="Explore all sports available on Khelo Bharat."
+          description="Explore all sports available on Khel Setu."
         />
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

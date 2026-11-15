@@ -18,7 +18,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Trophy className="h-6 w-6 text-primary" />
-          <span className="font-sans text-xl font-bold tracking-tight text-primary">KHELO भारत</span>
+          <span className="font-sans text-xl font-bold tracking-tight text-primary">KHEL सेतु</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
