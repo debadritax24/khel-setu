@@ -7,14 +7,14 @@ import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] pt-12 pb-20 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-36 border-b border-white/10">
+    <section className="relative overflow-hidden bg-background pt-12 pb-20 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-36 border-b border-border">
       {/* Background ambient lighting and grid overlay */}
       <div className="absolute inset-0 grid-overlay opacity-40 pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-[#FF4D12]/20 via-[#F28C28]/10 to-transparent blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-[#FF4D12]/15 via-[#F28C28]/10 to-transparent blur-[120px] rounded-full pointer-events-none" />
       
       {/* Precision corner crosshairs */}
-      <div className="absolute top-6 left-6 font-mono-tag text-xs text-white/20 select-none hidden lg:block">+ 28.6139° N / INDIA</div>
-      <div className="absolute top-6 right-6 font-mono-tag text-xs text-white/20 select-none hidden lg:block">SYS: LIVE +</div>
+      <div className="absolute top-6 left-6 font-mono-tag text-xs text-muted-foreground/40 select-none hidden lg:block">+ 28.6139° N / INDIA</div>
+      <div className="absolute top-6 right-6 font-mono-tag text-xs text-muted-foreground/40 select-none hidden lg:block">SYS: LIVE +</div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-left">
@@ -24,13 +24,13 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 backdrop-blur-md"
+            className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card/70 px-4 py-1.5 backdrop-blur-md shadow-xs"
           >
             <span className="flex h-2 w-2 rounded-full bg-[#FF4D12] animate-ping" />
-            <p className="font-mono-tag text-xs font-semibold tracking-wider text-[#EDEDED] uppercase">
+            <p className="font-mono-tag text-xs font-semibold tracking-wider text-foreground uppercase">
               Making a bridge for the sports ecosystem
             </p>
-            <span className="text-white/30">•</span>
+            <span className="text-muted-foreground/40">•</span>
             <span className="font-mono-tag text-[11px] text-[#F28C28] tracking-widest uppercase">
               [ 01 // OVERVIEW ]
             </span>
@@ -43,7 +43,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-8"
           >
-            <h1 className="font-display text-5xl font-extrabold uppercase tracking-tight text-white sm:text-7xl md:text-8xl lg:text-9xl leading-[0.92]">
+            <h1 className="font-display text-5xl font-extrabold uppercase tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-9xl leading-[0.92]">
               KHEL <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4D12] via-[#F28C28] to-[#FF7A00]">सेतु</span>
             </h1>
           </motion.div>
@@ -53,7 +53,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-8 text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl max-w-3xl font-display"
+            className="mt-8 text-2xl font-bold leading-tight text-foreground sm:text-3xl lg:text-4xl max-w-3xl font-display"
           >
             One platform connecting athletes, academies &<br className="hidden sm:block" /> sponsors across India.
           </motion.h2>
@@ -63,7 +63,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-300 sm:text-lg"
+            className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
             A mobile-and-web sports ecosystem that helps grassroots athletes get discovered, academies run digitally, and sponsors find verified local talent.
           </motion.p>
@@ -90,7 +90,7 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               asChild
-              className="h-14 rounded-full border border-white/20 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+              className="h-14 rounded-full border border-border bg-card px-8 text-base font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:bg-neutral-500/10 hover:border-foreground/30"
             >
               <Link href="/tournaments">
                 Explore Tournaments
@@ -103,35 +103,35 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16 sm:mt-24 grid grid-cols-1 gap-4 sm:grid-cols-3 border-t border-white/10 pt-8"
+            className="mt-16 sm:mt-24 grid grid-cols-1 gap-4 sm:grid-cols-3 border-t border-border pt-8"
           >
             <div className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#FF4D12]">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-[#FF4D12]">
                 <Trophy className="h-4 w-4" />
               </div>
               <div>
-                <p className="font-mono-tag text-xs font-bold uppercase tracking-wider text-white">Grassroots to Elite</p>
-                <p className="mt-1 text-xs text-neutral-400">Standardized lifecycle tournament management</p>
+                <p className="font-mono-tag text-xs font-bold uppercase tracking-wider text-foreground">Grassroots to Elite</p>
+                <p className="mt-1 text-xs text-muted-foreground">Standardized lifecycle tournament management</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#F28C28]">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-[#F28C28]">
                 <ShieldCheck className="h-4 w-4" />
               </div>
               <div>
-                <p className="font-mono-tag text-xs font-bold uppercase tracking-wider text-white">Verified Profiles</p>
-                <p className="mt-1 text-xs text-neutral-400">Cryptographically verifiable digital certificates</p>
+                <p className="font-mono-tag text-xs font-bold uppercase tracking-wider text-foreground">Verified Profiles</p>
+                <p className="mt-1 text-xs text-muted-foreground">Cryptographically verifiable digital certificates</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[#FF4D12]">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-[#FF4D12]">
                 <Sparkles className="h-4 w-4" />
               </div>
               <div>
-                <p className="font-mono-tag text-xs font-bold uppercase tracking-wider text-white">Sponsor Marketplace</p>
-                <p className="mt-1 text-xs text-neutral-400">Direct talent scouting & brand endorsements</p>
+                <p className="font-mono-tag text-xs font-bold uppercase tracking-wider text-foreground">Sponsor Marketplace</p>
+                <p className="mt-1 text-xs text-muted-foreground">Direct talent scouting & brand endorsements</p>
               </div>
             </div>
           </motion.div>

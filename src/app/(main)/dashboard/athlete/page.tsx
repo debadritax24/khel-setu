@@ -10,16 +10,13 @@ import { Button } from "@/components/ui/button";
 import { requireCurrentUser } from "@/lib/auth";
 import { athleteService } from "@/services/athlete.service";
 import { performanceService } from "@/services/performance.service";
-import { tournamentService } from "@/services/tournament.service";
 
 export const dynamic = "force-dynamic";
 
 export default async function AthleteDashboardPage() {
   const user = await requireCurrentUser();
   const athlete = await athleteService.getAthleteByUserId(user.id).catch(() => null);
-  const [stats, tournaments] = athlete ? await Promise.all([
-    performanceService.getAthleteStats(athlete.id), tournamentService.getUpcomingTournaments(3),
-  ]) : [null, []] as const;
+  const stats = athlete ? await performanceService.getAthleteStats(athlete.id) : null;
 
   return <DashboardLayout><div className="space-y-8">
     <PageHeader title="Athlete Dashboard" description="Track recorded results and discover live tournament opportunities." />
@@ -37,7 +34,7 @@ export default async function AthleteDashboardPage() {
             <Button variant="ghost" size="sm" asChild><Link href="/tournaments">Find More</Link></Button>
           </CardHeader>
           <CardContent className="space-y-4">
-            {athlete.registrations?.length ? athlete.registrations.map((reg: any) => (
+            {athlete.registrations?.length ? athlete.registrations.map((reg) => (
               <div key={reg.id} className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-bold">{reg.tournament.title}</p>
@@ -72,7 +69,7 @@ export default async function AthleteDashboardPage() {
             <CardTitle>Sponsorship Requests</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {athlete.sponsorshipRequests?.length ? athlete.sponsorshipRequests.map((req: any) => (
+            {athlete.sponsorshipRequests?.length ? athlete.sponsorshipRequests.map((req) => (
               <div key={req.id} className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-bold">{req.sponsor.companyName}</p>
@@ -87,7 +84,7 @@ export default async function AthleteDashboardPage() {
             <CardTitle>My Coaches</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            {athlete.coachRelationships?.length ? athlete.coachRelationships.map((rel: any) => (
+            {athlete.coachRelationships?.length ? athlete.coachRelationships.map((rel) => (
               <div key={rel.id} className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-bold">{rel.coach.user.name}</p>

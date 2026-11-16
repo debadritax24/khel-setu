@@ -3,3 +3,4 @@ export { Footer } from "./footer";
 export { Sidebar } from "./sidebar";
 export { DashboardLayout } from "./dashboard-layout";
 export { PageHeader } from "./page-header";
+export { ThemeToggle } from "./theme-toggle";

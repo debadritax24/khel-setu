@@ -84,21 +84,21 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="relative bg-[#0A0A0A] py-24 sm:py-32 border-b border-white/10 overflow-hidden">
+    <section id="features" className="relative bg-background py-24 sm:py-32 border-b border-border overflow-hidden">
       <div className="absolute inset-0 grid-overlay opacity-30 pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-16 border-b border-white/10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-16 border-b border-border">
           <div>
             <div className="inline-flex items-center gap-2 font-mono-tag text-xs font-semibold uppercase tracking-widest text-[#FF4D12]">
               <span>[ 02 // PLATFORM CAPABILITIES ]</span>
             </div>
-            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
+            <h2 className="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-foreground">
               Built for the game
             </h2>
           </div>
-          <p className="max-w-md text-base sm:text-lg text-neutral-400 font-normal leading-relaxed">
+          <p className="max-w-md text-base sm:text-lg text-muted-foreground font-normal leading-relaxed">
             Everything athletes, coaches, schools, and sponsors need — in one platform.
           </p>
         </div>
@@ -115,8 +115,8 @@ export function FeaturesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 className={cn(
-                  "group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-[#121212]/80 p-7 backdrop-blur-sm transition-all duration-300",
-                  "hover:border-[#FF4D12]/40 hover:bg-[#161616] hover:shadow-[0_10px_30px_-10px_rgba(255,77,18,0.15)]",
+                  "group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-7 backdrop-blur-sm transition-all duration-300 shadow-xs",
+                  "hover:border-[#FF4D12]/45 hover:shadow-[0_12px_32px_-10px_rgba(255,77,18,0.15)]",
                   feature.span
                 )}
               >
@@ -124,34 +124,34 @@ export function FeaturesSection() {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="font-mono-tag text-xs font-bold text-[#FF4D12]">
-                      //{feature.code}
+                      {"//"}{feature.code}
                     </span>
-                    <span className="font-mono-tag text-[10px] tracking-wider text-neutral-400 uppercase">
+                    <span className="font-mono-tag text-[10px] tracking-wider text-muted-foreground uppercase">
                       {feature.tag}
                     </span>
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-white/30 transition-all duration-300 group-hover:text-[#FF4D12] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground/50 transition-all duration-300 group-hover:text-[#FF4D12] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
 
                 {/* Card Icon & Content */}
                 <div className="mt-8">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-[#FF4D12] transition-all duration-300 group-hover:bg-[#FF4D12]/15 group-hover:border-[#FF4D12]/30 group-hover:scale-110">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-neutral-500/5 text-[#FF4D12] transition-all duration-300 group-hover:bg-[#FF4D12]/15 group-hover:border-[#FF4D12]/30 group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </div>
 
-                  <h3 className="mt-6 font-display text-xl sm:text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-white">
+                  <h3 className="mt-6 font-display text-xl sm:text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
                     {feature.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Bottom line accent */}
-                <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="font-mono-tag text-[10px] text-neutral-400 uppercase">STATUS: ACTIVE</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-white/20 group-hover:bg-[#FF4D12] transition-colors" />
+                <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
+                  <span className="font-mono-tag text-[10px] text-muted-foreground uppercase">STATUS: ACTIVE</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-border group-hover:bg-[#FF4D12] transition-colors" />
                 </div>
               </motion.div>
             );

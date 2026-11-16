@@ -11,7 +11,6 @@ import {
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
 const iconMap: Record<string, React.ElementType> = {
   LayoutDashboard,
